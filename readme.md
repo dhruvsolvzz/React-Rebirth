@@ -42,6 +42,10 @@ REACT HOOKS :==>>
 
 useState -> State Management
 
+useRef -> Actual dom element ko select karne ki power deta hai 
+unnecessary reRendes ko rokta jai
+Most Optimized
+
 useEffect ->
 
 
