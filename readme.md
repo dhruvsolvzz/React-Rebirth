@@ -68,5 +68,7 @@ Isi wajah se data input se state mein bhi jaata hai aur state se input mein bhi 
 BrouserRouter =>
 History API ka use karta hai Routing karne ke lia aur ye Mainly Brouser Pe routing karne ke lia use hota hai 
 
+useParam ka use karte hein url se parameter nikalne ke lia in react 
+
 
 
