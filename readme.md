@@ -72,3 +72,22 @@ useParam ka use karte hein url se parameter nikalne ke lia in react
 
 
 
+------------------------------COntext API--------------------------------------------------
+
+Context Api is used to Centeralize the data
+
+step 1.   Context ko create karna
+step 2.   Context ko Provide karna 
+step 3.   Context ka use karna
+
+
+----------------------------REACT REDUX---------------------------
+
+ISME 3 CHIZE HOTI HAI 
+
+1. STRORE 
+2. SCLICE
+3. RESUCERS
+4. 2 FUNCTIONS --- USEDISPATCH , USESELECTOR
+
+
