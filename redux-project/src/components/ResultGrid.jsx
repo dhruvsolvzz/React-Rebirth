@@ -8,17 +8,19 @@ import {
 } from "../redux/features/searchSlice";
 import axios from "axios";
 import { useEffect } from "react";
-import { store } from "../redux/store";
+
 
 const ResultGrid = () => {
-  const { query, activeTab, error, loading } = useSelector((store) => {
+    const dispatch = useDispatch()
+  const { query, activeTab, error, loading , results } = useSelector((store) => {
     return store.search;
   });
 
   useEffect(() => {
+    
     if (!query.trim()) return;
     const getData = async () => {
-      let data;
+      let data=[];
       if (activeTab == "Photos") {
         // isko bolte hein normalizationnnnn
         let response = await fetchPhotos(query);
@@ -38,7 +40,7 @@ const ResultGrid = () => {
           return {
             id: item.id,
             type: "video",
-            title: item.use.name || "video",
+            title: item.user.name || "video",
             thumbnail: item.image,
             src: item.video_files[0].link,
           };
@@ -56,11 +58,15 @@ const ResultGrid = () => {
           };
         });
       }
-      console.log(data);
+      dispatch(setResults(data))
     };
     getData();
   }, [query, activeTab]);
-  return <div></div>;
+  return <div>
+   {results.map((elem) => (
+  <h1 key={elem.id}>{elem.title}</h1>
+))}
+  </div>;
 };
 
 export default ResultGrid;
